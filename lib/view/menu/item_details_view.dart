@@ -391,17 +391,15 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                         icon:
                                                             "assets/img/shopping_add.png",
                                                         color: TColor.primary,
-                                                        onPressed: () {}),
+                                                        onPressed: () {
+                                                          _addToCart();
+                                                        }),
                                                   )
                                                 ],
                                               )),
                                           InkWell(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const MyOrderView()));
+                                              _addToCart();
                                               // Navigator.push(
                                               //     context,
                                               //     MaterialPageRoute(
@@ -491,7 +489,10 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                       ),
                       IconButton(
                         onPressed: () {
-                          _addToCart();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MyOrderView()));
                         },
                         icon: Image.asset(
                           "assets/img/shopping_cart.png",
