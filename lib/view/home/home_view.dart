@@ -24,30 +24,135 @@ class _HomeViewState extends State<HomeView> {
   TextEditingController txtSearch = TextEditingController();
 
   List catArr = [
-    {"image": "assets/img/cat_1.jpg", "name": "TORTAS", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/cat_2.webp", "name": "TAQUITOS", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/cat_3.jpg", "name": "BURRITO", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/cat_4.jpg", "name": "HUARACHES", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/cat_5.jpg", "name": "COMBOS", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/cat_6.jpg", "name": "SOUP/SALADS", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/cat_7.webp", "name": "BREAKFAST", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
+    {
+      "image": "assets/img/cat_1.jpg",
+      "name": "TORTAS",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/cat_2.webp",
+      "name": "TAQUITOS",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/cat_3.jpg",
+      "name": "BURRITO",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/cat_4.jpg",
+      "name": "HUARACHES",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/cat_5.jpg",
+      "name": "COMBOS",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/cat_6.jpg",
+      "name": "SOUP/SALADS",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/cat_7.webp",
+      "name": "BREAKFAST",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
   ];
 
   List popArr = [
-    {"image": "assets/img/res_1.png", "name": "Pizza", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/res_2.png", "name": "Dinner", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/res_3.png", "name": "Bakery", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
+    {
+      "image": "assets/img/res_1.png",
+      "name": "Pizza",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/res_2.png",
+      "name": "Dinner",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/res_3.png",
+      "name": "Bakery",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
   ];
 
   List mostPopArr = [
-    {"image": "assets/img/m_res_1.png", "name": "Pizza", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/m_res_2.png", "name": "Fruits", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Nepali Food"},
+    {
+      "image": "assets/img/m_res_1.png",
+      "name": "Pizza",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/m_res_2.png",
+      "name": "Fruits",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Maxican Food"
+    },
   ];
 
   List recentArr = [
-    {"image": "assets/img/item_1.png", "name": "Mulberry Pizza ", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
-    {"image": "assets/img/item_2.png", "name": "Coffee", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Nepali Food"},
-    {"image": "assets/img/item_3.png", "name": "Pizza ", "rate": "4.9", "rating": "124", "type": "Cafa", "food_type": "Western Food"},
+    {
+      "image": "assets/img/item_1.png",
+      "name": "Mulberry Pizza ",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
+    {
+      "image": "assets/img/item_2.png",
+      "name": "Coffee",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Maxican Food"
+    },
+    {
+      "image": "assets/img/item_3.png",
+      "name": "Pizza ",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "Cafa",
+      "food_type": "Western Food"
+    },
   ];
 
   @override
@@ -68,11 +173,17 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     Text(
                       "Good morning  ${ServiceCall.userPayload[KKey.name] ?? ""}!",
-                      style: TextStyle(color: TColor.primaryText, fontSize: 20, fontWeight: FontWeight.w800),
+                      style: TextStyle(
+                          color: TColor.primaryText,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800),
                     ),
                     IconButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MyOrderView()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
@@ -93,7 +204,8 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     Text(
                       "Delivering to",
-                      style: TextStyle(color: TColor.secondaryText, fontSize: 11),
+                      style:
+                          TextStyle(color: TColor.secondaryText, fontSize: 11),
                     ),
                     const SizedBox(
                       height: 6,
@@ -103,7 +215,10 @@ class _HomeViewState extends State<HomeView> {
                       children: [
                         Text(
                           "Current Location",
-                          style: TextStyle(color: TColor.secondaryText, fontSize: 16, fontWeight: FontWeight.w700),
+                          style: TextStyle(
+                              color: TColor.secondaryText,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
                         ),
                         const SizedBox(
                           width: 25,
