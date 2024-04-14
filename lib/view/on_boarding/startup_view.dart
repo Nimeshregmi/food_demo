@@ -20,7 +20,7 @@ class _StarupViewState extends State<StartupView> {
   }
 
   void goWelcomePage() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 2));
     welcomePage();
   }
 
@@ -57,7 +57,7 @@ class _StarupViewState extends State<StartupView> {
             fit: BoxFit.cover,
           ),
           Image.asset(
-            "assets/img/app_logo.png",
+            "assets/img/logo.jpeg",
             width: media.width * 0.55,
             height: media.width * 0.55,
             fit: BoxFit.contain,
