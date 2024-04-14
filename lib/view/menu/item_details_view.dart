@@ -22,6 +22,33 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
     'Large': 2.0, // Add your large size price here
   };
 
+  void _addToCart() {
+    if (selectedSize.isEmpty) {
+      // Show popup if size is not selected
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Size not chosen'),
+            content: const Text('Please choose a size before adding to cart.'),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      double totalPrice = sizePrices[selectedSize]!;
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const MyOrderView()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -375,6 +402,11 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                   MaterialPageRoute(
                                                       builder: (context) =>
                                                           const MyOrderView()));
+                                              // Navigator.push(
+                                              //     context,
+                                              //     MaterialPageRoute(
+                                              //         builder: (context) =>
+                                              //             const MyOrderView()));
                                             },
                                             child: Container(
                                               width: 45,
@@ -459,10 +491,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                       ),
                       IconButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const MyOrderView()));
+                          _addToCart();
                         },
                         icon: Image.asset(
                           "assets/img/shopping_cart.png",
