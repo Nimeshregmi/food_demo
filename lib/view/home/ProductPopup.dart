@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/view/home/ViewProduct.dart';
+import 'package:food_delivery/view/menu/item_details_page.dart';
+import 'package:food_delivery/view/menu/item_details_view.dart';
 import '../../common_widget/round_textfield.dart';
 
 class ProductPopUp extends StatefulWidget {
@@ -62,7 +64,8 @@ class _ProductPopUpState extends State<ProductPopUp> {
                   });
                 },
               ),
-              const Text('Schedule date and time', style: TextStyle(fontSize: 16)),
+              const Text('Schedule date and time',
+                  style: TextStyle(fontSize: 16)),
             ],
           ),
           if (val2)
@@ -93,7 +96,8 @@ class _ProductPopUpState extends State<ProductPopUp> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProductView(pObj: widget.pObj),
+                // builder: (context) => ProductView(pObj: widget.pObj),
+                builder: (context) => const ItemDetailsView(),
               ),
             );
           },

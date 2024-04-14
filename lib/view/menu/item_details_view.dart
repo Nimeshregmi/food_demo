@@ -16,6 +16,11 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
   double price = 15;
   int qty = 1;
   bool isFav = false;
+  String selectedSize = '';
+  Map<String, double> sizePrices = {
+    'Regular': 0.0, // Add your regular size price here
+    'Large': 2.0, // Add your large size price here
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -191,185 +196,85 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 height: 20,
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 25),
-                                child: Text(
-                                  "Customize your Order",
-                                  style: TextStyle(
-                                      color: TColor.primaryText,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 25),
-                                child: Container(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 15),
-                                  decoration: BoxDecoration(
-                                      color: TColor.textfield,
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton(
-                                      isExpanded: true,
-                                      items: ["small", "Big"].map((e) {
-                                        return DropdownMenuItem(
-                                          value: e,
-                                          child: Text(
-                                            e,
-                                            style: TextStyle(
-                                                color: TColor.primaryText,
-                                                fontSize: 14),
-                                          ),
-                                        );
-                                      }).toList(),
-                                      onChanged: (val) {},
-                                      hint: Text(
-                                        "- Select the size of portion -",
-                                        textAlign: TextAlign.center,
+                                      horizontal: 25),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Size",
                                         style: TextStyle(
-                                            color: TColor.secondaryText,
-                                            fontSize: 14),
+                                            color: TColor.primaryText,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700),
                                       ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                                      Text(
+                                        "1 Max | Required",
+                                        style: TextStyle(
+                                            color: TColor.primaryText,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700),
+                                      ),
+                                    ],
+                                  )),
                               const SizedBox(
-                                height: 15,
+                                height: 10,
                               ),
+                              SizedBox(height: 10),
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 25),
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15),
-                                  decoration: BoxDecoration(
-                                      color: TColor.textfield,
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton(
-                                      isExpanded: true,
-                                      items: ["small", "Big"].map((e) {
-                                        return DropdownMenuItem(
-                                          value: e,
-                                          child: Text(
-                                            e,
-                                            style: TextStyle(
-                                                color: TColor.primaryText,
-                                                fontSize: 14),
-                                          ),
-                                        );
-                                      }).toList(),
-                                      onChanged: (val) {},
-                                      hint: Text(
-                                        "- Select the ingredients -",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: TColor.secondaryText,
-                                            fontSize: 14),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 25,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 25),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "Number of Portions",
-                                      style: TextStyle(
-                                          color: TColor.primaryText,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    const Spacer(),
-                                    InkWell(
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: sizePrices.keys.map((size) {
+                                    return GestureDetector(
                                       onTap: () {
-                                        qty = qty - 1;
-
-                                        if (qty < 1) {
-                                          qty = 1;
-                                        }
-                                        setState(() {});
+                                        setState(() {
+                                          selectedSize = size;
+                                        });
                                       },
                                       child: Container(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 15),
-                                        height: 25,
-                                        alignment: Alignment.center,
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 10),
+                                        margin: EdgeInsets.only(bottom: 10),
                                         decoration: BoxDecoration(
-                                            color: TColor.primary,
-                                            borderRadius:
-                                                BorderRadius.circular(12.5)),
-                                        child: Text(
-                                          "-",
-                                          style: TextStyle(
-                                              color: TColor.white,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 8,
-                                    ),
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 15),
-                                      height: 25,
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
                                           border: Border.all(
-                                            color: TColor.primary,
+                                            color: selectedSize == size
+                                                ? Colors.orange
+                                                : Colors.grey,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.5)),
-                                      child: Text(
-                                        qty.toString(),
-                                        style: TextStyle(
-                                            color: TColor.primary,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 8,
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        qty = qty + 1;
-
-                                        setState(() {});
-                                      },
-                                      child: Container(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 15),
-                                        height: 25,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                            color: TColor.primary,
-                                            borderRadius:
-                                                BorderRadius.circular(12.5)),
-                                        child: Text(
-                                          "+",
-                                          style: TextStyle(
-                                              color: TColor.white,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w700),
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              '$size',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: selectedSize == size
+                                                    ? Colors.orange
+                                                    : Colors.black,
+                                              ),
+                                            ),
+                                            SizedBox(width: 10),
+                                            Text(
+                                              '+\$${sizePrices[size]}', // Display size price
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: selectedSize == size
+                                                    ? Colors.orange
+                                                    : Colors.black,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    );
+                                  }).toList(),
                                 ),
                               ),
                               SizedBox(
