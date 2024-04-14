@@ -4,7 +4,7 @@ import 'package:food_delivery/common/color_extension.dart';
 class ProductView extends StatefulWidget {
   final Map pObj;
 
-  const ProductView({super.key,  required this.pObj});
+  const ProductView({super.key, required this.pObj});
 
   @override
   State<ProductView> createState() => _ProductViewState();
@@ -47,27 +47,6 @@ class _ProductViewState extends State<ProductView> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                     
-                        value = value + 1;
-                      
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Icon(Icons.add),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  value.toString(),
-                  style: const TextStyle(fontSize: 18),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
                       if (value > 1) {
                         value = value - 1;
                       }
@@ -79,6 +58,25 @@ class _ProductViewState extends State<ProductView> {
                     ),
                   ),
                   child: const Icon(Icons.remove),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  value.toString(),
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      value = value + 1;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Icon(Icons.add),
                 ),
               ],
             )),
@@ -92,7 +90,7 @@ class _ProductViewState extends State<ProductView> {
                       style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.red),
                     ),
                     Text(
-                      '\$${value*30}',
+                      '\$${value * 30}',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: TColor.primary, fontSize: 18, fontWeight: FontWeight.w900),
                     ),
@@ -198,7 +196,6 @@ class _ProductViewState extends State<ProductView> {
                               'Purchase Successful',
                               style: TextStyle(fontSize: 16),
                             ),
-                            
                           ],
                         ),
                         actions: [
